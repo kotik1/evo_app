@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body bgcolor="#f8f9fb" style=" margin: 0 !important;font-family: 'Courier New', Courier, monospace;
+    padding: 0 !important;">
+
+
+<div style="width: 100%;height: 76px;position:relative;background:white;margin-top:0px;">
+
+<a href="/" style="position: relative;margin-top:30px;margin-left: 40px;display: inline-block;">Main</a>
+<a href="/show_can" style="position: relative;margin-top:30px;margin-left: 40px;display: inline-block;">Candidates</a>
+<a href="" style="position: relative;margin-top:10px;margin-left: 33%;display: inline-block;font-size: 20px;text-decoration: none;color:blue;"><b>EVO</b></a>
+
+<a href="/create_vacancy" style="position: relative;float: right;top:30px;right: 40px;"><i>Add Vacancy</i></a></div>
+
+
+{% if workers %}
+
+
+{% for wo in workers %}
+
+
+<div style="position: relative;display: inline-block;width: 300px;height: 440px;padding:18px 7px 7px 18px;margin-top:50px;margin-left:60px;
+background:white;z-index: 3;-webkit-box-shadow: 16px 10px 31px -17px rgba(199,220,255,1);
+-moz-box-shadow: 16px 10px 31px -17px rgba(199,220,255,1);
+box-shadow: 16px 10px 31px -17px rgba(199,220,255,1);">
+<!--   <a href="/edit_vacancy">Edit vacancy</a> <br/><br/> -->
+      <b style="color:red;"> Title:</b> <br/> Department {{ wo.name }} <br/>
+    <b style="color:red;"> Description :</b> <br/> {{ wo.description }} <br/>
+     <b style="color:red;"> Department :</b> <br/> {{ wo.department }} <br/>
+
+      
+
+</div>
+  {% endfor %}
+
+  {% else %}
+
+  <span style="position: relative;top:300px;margin-left: 24%;">There are no workers Sorry, mate. But you can always create vacancy and choose from candidates</span>
+
+ {% endif %}
+</body>
+</html>
